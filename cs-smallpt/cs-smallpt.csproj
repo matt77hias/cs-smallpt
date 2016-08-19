@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\ImageIO.cs" />
+    <Compile Include="core\RNG.cs" />
     <Compile Include="core\Sampling.cs" />
     <Compile Include="core\MathUtils.cs" />
     <Compile Include="core\Ray.cs" />
-    <Compile Include="core\RNG.cs" />
     <Compile Include="core\Specular.cs" />
     <Compile Include="core\Sphere.cs" />
     <Compile Include="core\Vector3.cs" />
