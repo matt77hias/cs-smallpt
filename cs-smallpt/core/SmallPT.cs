@@ -134,7 +134,7 @@ namespace cs_smallpt.core
                         }
                     default:
                         {
-                            Vector3 w = n.Dot(d) < 0 ? n : -n;
+                            Vector3 w = n.Dot(r.d) < 0 ? n : -n;
                             Vector3 u = ((Math.Abs(w[0]) > 0.1 ? new Vector3(0.0, 1.0, 0.0) : new Vector3(1.0, 0.0, 0.0)).Cross(w)).Normalize();
                             Vector3 v = w.Cross(u);
 
