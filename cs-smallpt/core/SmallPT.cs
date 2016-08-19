@@ -88,6 +88,18 @@ namespace cs_smallpt.core
             return hit;
         }
 
+        public static bool Intersect(Ray ray)
+        {
+            for (int i = 0; i < spheres.Length; ++i)
+            {
+                if (spheres[i].Intersect(ray))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static Vector3 Radiance(Ray ray, RNG rng) {
             Ray r = ray;
             Vector3 L = new Vector3();
