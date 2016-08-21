@@ -5,9 +5,9 @@ namespace cs_smallpt.core
 {
     public class ImageIO
     {
-        public static void WritePPM(int w, int h, Vector3[] Ls) 
+        public static void WritePPM(int w, int h, Vector3[] Ls, string fname = "cs-image.ppm") 
         {
-            using (StreamWriter sw = new StreamWriter("image.ppm"))
+            using (StreamWriter sw = new StreamWriter(fname))
             {
 
                 string sbegin = string.Format("P3\n{0} {1}\n{2}\n", w, h, 255);
