@@ -9,8 +9,8 @@ namespace cs_smallpt.core
             RNG rng = new RNG();
             int nb_samples = (args.Length > 0) ? int.Parse(args[0]) / 4 : 1;
 
-            const int w = 512;
-            const int h = 384;
+            const int w = 1024;
+            const int h = 768;
 
             Vector3 eye = new Vector3(50, 52, 295.6);
             Vector3 gaze = new Vector3(0, -0.042612, -1).Normalize();
