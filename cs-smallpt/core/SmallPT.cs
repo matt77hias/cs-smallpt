@@ -22,7 +22,7 @@ namespace cs_smallpt.core
             for (int i = 0; i < w * h; ++i)
                 Ls[i] = new Vector3();
 
-            for (int y = h-2; y < h; ++y)
+            for (int y = 0; y < h; ++y)
             {
                 // pixel row
                 Console.Write("\rRendering ({0} spp) {1:0.00}%", nb_samples * 4, 100.0 * y / (h - 1));
