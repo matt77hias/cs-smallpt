@@ -45,7 +45,7 @@ namespace cs_smallpt.core
                                 double dy = u2 < 1 ? Math.Sqrt(u2) - 1.0 : 1.0 - Math.Sqrt(2.0 - u2);
                                 Vector3 d = cx * (((sx + 0.5 + dx) / 2 + x) / w - 0.5) +
                                             cy * (((sy + 0.5 + dy) / 2 + y) / h - 0.5) + gaze;
-                                L += Radiance(new Ray(eye + d * 140, d.Normalize(), Sphere.EPSILON_SPHERE), rng) * (1.0 / nb_samples);
+                                L += Radiance(new Ray(eye + d * 130, d.Normalize(), Sphere.EPSILON_SPHERE), rng) * (1.0 / nb_samples);
                             }
                             Ls[i] += 0.25 * Vector3.Clamp(L);
                         }
