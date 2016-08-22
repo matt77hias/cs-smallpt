@@ -59,7 +59,7 @@ namespace cs_smallpt.core
 
         public bool HasNaNs()
         {
-            return Double.IsNaN(raw[0]) || Double.IsNaN(raw[1]) || Double.IsNaN(raw[2]);
+            return double.IsNaN(raw[0]) || double.IsNaN(raw[1]) || double.IsNaN(raw[2]);
         }
 
         public double this[int i]
