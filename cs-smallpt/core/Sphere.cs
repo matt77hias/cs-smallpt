@@ -49,13 +49,15 @@ namespace cs_smallpt.core
 		    double sqrtD = Math.Sqrt(D);
 
             double tmin = dop - sqrtD;
-		    if (ray.tmin < tmin && tmin < ray.tmax) {
+		    if (ray.tmin < tmin && tmin < ray.tmax)
+            {
 			    ray.tmax = tmin;
 			    return true;
 		    }
 
             double tmax = dop + sqrtD;
-		    if (ray.tmin < tmax && tmax < ray.tmax) {
+		    if (ray.tmin < tmax && tmax < ray.tmax)
+            {
 			    ray.tmax = tmax;
 			    return true;
 		    }
