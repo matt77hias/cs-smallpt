@@ -150,7 +150,7 @@ namespace cs_smallpt.core
                             Vector3 u = ((Math.Abs(w[0]) > 0.1 ? new Vector3(0.0, 1.0, 0.0) : new Vector3(1.0, 0.0, 0.0)).Cross(w)).Normalize();
                             Vector3 v = w.Cross(u);
 
-                            Vector3 sample_d = Sampling.UniformSampleOnHemisphere(rng.UniformFloat(), rng.UniformFloat());
+                            Vector3 sample_d = Sampling.CosineWeightedSampleOnHemisphere(rng.UniformFloat(), rng.UniformFloat());
                             Vector3 d = (sample_d[0] * u + sample_d[1] * v + sample_d[2] * w).Normalize();
                             r = new Ray(p, d, Sphere.EPSILON_SPHERE, double.PositiveInfinity, r.depth + 1);
                             break;
