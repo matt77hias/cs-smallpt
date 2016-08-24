@@ -118,7 +118,7 @@ namespace cs_smallpt.core
                 L += F * shape.e;
                 F *= shape.f;
 		
-	            // Russion roulette
+	            // Russian roulette
 	            if (r.depth > 4)
                 {
 		            double continue_probability = shape.f.Max();
