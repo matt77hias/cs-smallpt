@@ -36,7 +36,7 @@ namespace cs_smallpt.core
                         {
                             // 2 subpixel column
                             Vector3 L = new Vector3();
-                            for (int s = 0; s < nb_samples; s++)
+                            for (int s = 0; s < nb_samples; ++s)
                             {
                                 // samples per subpixel
                                 double u1 = 2.0 * rng.UniformFloat();
