@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
-namespace cs_smallpt.core
+namespace cs_smallpt
 {
     public class ImageIO
     {

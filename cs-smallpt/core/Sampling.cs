@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cs_smallpt.core
+namespace cs_smallpt
 {
     public class Sampling
     {
