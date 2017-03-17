@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace cs_smallpt
-{
-	class SmallPT
-	{
-		static void Main(string[] args)
-		{
+namespace cs_smallpt {
+
+	class SmallPT {
+
+		static void Main(string[] args) {
 			RNG rng = new RNG();
 			int nb_samples = (args.Length > 0) ? int.Parse(args[0]) / 4 : 1;
 
@@ -22,22 +21,17 @@ namespace cs_smallpt
 			for (int i = 0; i < w * h; ++i)
 				Ls[i] = new Vector3();
 
-			for (int y = 0; y < h; ++y)
-			{
+			for (int y = 0; y < h; ++y) {
 				// pixel row
 				Console.Write("\rRendering ({0} spp) {1:0.00}%", nb_samples * 4, 100.0 * y / (h - 1));
-				for (int x = 0; x < w; ++x)
-				{
+				for (int x = 0; x < w; ++x) {
 					// pixel column
-					for (int sy = 0, i = (h - 1 - y) * w + x; sy < 2; ++sy)
-					{
+					for (int sy = 0, i = (h - 1 - y) * w + x; sy < 2; ++sy) {
 						// 2 subpixel row
-						for (int sx = 0; sx < 2; ++sx)
-						{
+						for (int sx = 0; sx < 2; ++sx) {
 							// 2 subpixel column
 							Vector3 L = new Vector3();
-							for (int s = 0; s < nb_samples; ++s)
-							{
+							for (int s = 0; s < nb_samples; ++s) {
 								// samples per subpixel
 								double u1 = 2.0 * rng.UniformFloat();
 								double u2 = 2.0 * rng.UniformFloat();
@@ -73,14 +67,11 @@ namespace cs_smallpt
 			new Sphere(600,  new Vector3(50, 681.6 - .27, 81.6), new Vector3(12), new Vector3(),               Sphere.Reflection_t.DIFFUSE)		//Light
 		};
 
-		public static bool Intersect(Ray ray, out int id)
-		{
+		public static bool Intersect(Ray ray, out int id) {
 			id = 0;
 			bool hit = false;
-			for (int i = 0; i < spheres.Length; ++i)
-			{
-				if (spheres[i].Intersect(ray))
-				{
+			for (int i = 0; i < spheres.Length; ++i) {
+				if (spheres[i].Intersect(ray)) {
 					hit = true;
 					id = i;
 				}
@@ -88,12 +79,9 @@ namespace cs_smallpt
 			return hit;
 		}
 
-		public static bool Intersect(Ray ray)
-		{
-			for (int i = 0; i < spheres.Length; ++i)
-			{
-				if (spheres[i].Intersect(ray))
-				{
+		public static bool Intersect(Ray ray) {
+			for (int i = 0; i < spheres.Length; ++i) {
+				if (spheres[i].Intersect(ray)) {
 					return true;
 				}
 			}
@@ -105,8 +93,7 @@ namespace cs_smallpt
 			Vector3 L = new Vector3();
 			Vector3 F = new Vector3(1.0);
 
-			while (true)
-			{
+			while (true) {
 				int id;
 				if (!Intersect(r, out id))
 					return L;
@@ -117,10 +104,9 @@ namespace cs_smallpt
 
 				L += F * shape.e;
 				F *= shape.f;
-		
+
 				// Russian roulette
-				if (r.depth > 4)
-				{
+				if (r.depth > 4) {
 					double continue_probability = shape.f.Max();
 					if (rng.UniformFloat() >= continue_probability)
 						return L;
@@ -128,24 +114,20 @@ namespace cs_smallpt
 				}
 
 				// Next path segment
-				switch (shape.reflection_t)
-				{
-					case Sphere.Reflection_t.SPECULAR:
-						{
+				switch (shape.reflection_t) {
+					case Sphere.Reflection_t.SPECULAR: {
 							Vector3 d = Specular.IdealSpecularReflect(r.d, n);
 							r = new Ray(p, d, Sphere.EPSILON_SPHERE, double.PositiveInfinity, r.depth + 1);
 							break;
 						}
-					case Sphere.Reflection_t.REFRACTIVE:
-						{
+					case Sphere.Reflection_t.REFRACTIVE: {
 							double pr;
 							Vector3 d = Specular.IdealSpecularTransmit(r.d, n, REFRACTIVE_INDEX_OUT, REFRACTIVE_INDEX_IN, out pr, rng);
 							F *= pr;
 							r = new Ray(p, d, Sphere.EPSILON_SPHERE, double.PositiveInfinity, r.depth + 1);
 							break;
 						}
-					default:
-						{
+					default: {
 							Vector3 w = n.Dot(r.d) < 0 ? n : -n;
 							Vector3 u = ((Math.Abs(w[0]) > 0.1 ? new Vector3(0.0, 1.0, 0.0) : new Vector3(1.0, 0.0, 0.0)).Cross(w)).Normalize();
 							Vector3 v = w.Cross(u);
