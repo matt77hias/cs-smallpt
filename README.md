@@ -1,6 +1,6 @@
 [![Build status][s1]][av] [![License][s2]][li]
 
-[s1]: https://ci.appveyor.com/api/projects/status/xn7xp4uwuhimegve?svg=true
+[s1]: https://ci.appveyor.com/api/github/webhook?id=f4nee6cyeju4wbh7
 [s2]: https://img.shields.io/badge/license-MIT-blue.svg
 
 [av]: https://ci.appveyor.com/project/matt77hias/cs-smallpt
