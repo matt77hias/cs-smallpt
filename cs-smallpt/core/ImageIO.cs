@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 
 namespace cs_smallpt {
 
@@ -11,7 +11,10 @@ namespace cs_smallpt {
                 sw.Write(sbegin);
 
                 for (int i = 0; i < w * h; ++i) {
-                    string s = string.Format("{0} {1} {2} ", MathUtils.ToByte(Ls[i][0]), MathUtils.ToByte(Ls[i][1]), MathUtils.ToByte(Ls[i][2]));
+                    string s = string.Format("{0} {1} {2} ", 
+						                     MathUtils.ToByte(Ls[i][0]), 
+						                     MathUtils.ToByte(Ls[i][1]), 
+						                     MathUtils.ToByte(Ls[i][2]));
                     sw.Write(s);
                 }
             }
