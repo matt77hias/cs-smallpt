@@ -1,9 +1,11 @@
-[![Build status][s1]][av] [![License][s2]][li]
+[![Build status][s1]][av] [![Code quality][s2]][co] [![License][s3]][li]
 
 [s1]: https://ci.appveyor.com/api/projects/status/xn7xp4uwuhimegve?svg=true
-[s2]: https://img.shields.io/badge/license-MIT-blue.svg
+[s2]: https://api.codacy.com/project/badge/Grade/b017fab838b74a3c833b61592126cd49
+[s3]: https://img.shields.io/badge/license-MIT-blue.svg
 
 [av]: https://ci.appveyor.com/project/matt77hias/cs-smallpt
+[co]: https://www.codacy.com/app/matt77hias/cs-smallpt?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=matt77hias/cs-smallpt&amp;utm_campaign=Badge_Grade
 [li]: https://raw.githubusercontent.com/matt77hias/cs-smallpt/master/LICENSE.txt
 
 # cs-smallpt
