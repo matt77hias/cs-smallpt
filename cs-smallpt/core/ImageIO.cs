@@ -2,7 +2,7 @@ using System.IO;
 
 namespace cs_smallpt {
 
-    public class ImageIO {
+    public static class ImageIO {
 
         public static void WritePPM(int w, int h, Vector3[] Ls, string fname = "cs-image.ppm") {
             using (StreamWriter sw = new StreamWriter(fname)) {
