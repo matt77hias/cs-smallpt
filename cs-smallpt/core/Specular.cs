@@ -2,7 +2,7 @@
 
 namespace cs_smallpt {
 
-    public class Specular {
+    public static class Specular {
 
         public static double Reflectance0(double n1, double n2) {
             double sqrt_R0 = (n1 - n2) / (n1 + n2);
