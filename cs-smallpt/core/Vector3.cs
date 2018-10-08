@@ -117,12 +117,14 @@ namespace cs_smallpt {
                 return false;
             }
 
-            Vector3 v1 = obj as Vector3;
-            if ((System.Object)v1 == null) {
+            return Equals(obj as Vector3);
+        }
+		public bool Equals(Vector3 v) {
+            if (v == null) {
                 return false;
             }
 
-            return (raw[0] == v1[0]) && (raw[1] == v1[1]) && (raw[2] == v1[2]);
+            return (raw[0] == v[0]) && (raw[1] == v[1]) && (raw[2] == v[2]);
         }
         public static bool operator ==(Vector3 v1, Vector3 v2) {
             return (v1[0] == v2[0]) && (v1[1] == v2[1]) && (v1[2] == v2[2]);
