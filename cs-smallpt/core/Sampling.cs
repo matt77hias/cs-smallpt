@@ -2,7 +2,7 @@
 
 namespace cs_smallpt {
 
-    public class Sampling {
+    public static class Sampling {
 
         public static Vector3 UniformSampleOnHemisphere(double u1, double u2) {
             double sin_theta = Math.Sqrt(Math.Max(0.0, 1.0 - u1 * u1));
