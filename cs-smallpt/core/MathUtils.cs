@@ -2,7 +2,7 @@
 
 namespace cs_smallpt {
 
-    public class MathUtils {
+    public static class MathUtils {
 
         public const double M_PI = 3.14159265358979323846;
 
