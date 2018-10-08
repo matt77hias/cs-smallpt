@@ -2,7 +2,7 @@
 
 namespace cs_smallpt {
 
-	class SmallPT {
+	static class SmallPT {
 
 		static void Main(string[] args) {
 			RNG rng = new RNG();
