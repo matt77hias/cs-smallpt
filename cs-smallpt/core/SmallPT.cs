@@ -53,9 +53,9 @@ namespace cs_smallpt {
 
 		// Scene
 		public const double REFRACTIVE_INDEX_OUT = 1.0;
-		public const double REFRACTIVE_INDEX_IN = 1.5;
+		public const double REFRACTIVE_INDEX_IN  = 1.5;
 
-		public const Sphere[] spheres =
+		public static readonly Sphere[] spheres =
 		{
 			new Sphere(1e5,  new Vector3(1e5 + 1, 40.8, 81.6),   new Vector3(),   new Vector3(0.75,0.25,0.25), Sphere.Reflection_t.DIFFUSE),    //Left
 			new Sphere(1e5,  new Vector3(-1e5 + 99, 40.8, 81.6), new Vector3(),   new Vector3(0.25,0.25,0.75), Sphere.Reflection_t.DIFFUSE),	//Right
