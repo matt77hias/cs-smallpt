@@ -18,8 +18,9 @@ namespace cs_smallpt {
 			Vector3 cy = (cx.Cross(gaze)).Normalize() * fov;
 
 			Vector3[] Ls = new Vector3[w * h];
-			for (int i = 0; i < w * h; ++i)
+			for (int i = 0; i < w * h; ++i) {
 				Ls[i] = new Vector3();
+			}
 
 			for (int y = 0; y < h; ++y) {
 				// pixel row
@@ -95,8 +96,9 @@ namespace cs_smallpt {
 
 			while (true) {
 				int id;
-				if (!Intersect(r, out id))
+				if (!Intersect(r, out id)) {
 					return L;
+				}
 
 				Sphere shape = spheres[id];
 				Vector3 p = r.Eval(r.tmax);
@@ -108,8 +110,9 @@ namespace cs_smallpt {
 				// Russian roulette
 				if (r.depth > 4) {
 					double continue_probability = shape.f.Max();
-					if (rng.UniformFloat() >= continue_probability)
+					if (rng.UniformFloat() >= continue_probability) {
 						return L;
+					}
 					F /= continue_probability;
 				}
 
