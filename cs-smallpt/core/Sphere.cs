@@ -41,8 +41,9 @@ namespace cs_smallpt {
             double dop = ray.d.Dot(op);
             double D = dop * dop - op.Dot(op) + r * r;
 
-            if (D < 0)
+            if (D < 0) {
                 return false;
+			}
 
             double sqrtD = Math.Sqrt(D);
 
