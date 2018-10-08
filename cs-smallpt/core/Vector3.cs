@@ -2,7 +2,7 @@
 
 namespace cs_smallpt {
 
-    public class Vector3 {
+    public class Vector3 : IEquatable {
 
         protected double[] raw = new double[3];
 
