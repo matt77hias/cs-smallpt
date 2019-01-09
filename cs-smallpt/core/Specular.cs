@@ -1,20 +1,24 @@
-﻿using System;
+using System;
+using System.Runtime.CompilerServices;
 
 namespace cs_smallpt {
 
     public static class Specular {
 
-        public static double Reflectance0(double n1, double n2) {
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static double Reflectance0(double n1, double n2) {
             double sqrt_R0 = (n1 - n2) / (n1 + n2);
             return sqrt_R0 * sqrt_R0;
         }
 
-        public static double SchlickReflectance(double n1, double n2, double c) {
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static double SchlickReflectance(double n1, double n2, double c) {
             double R0 = Reflectance0(n1, n2);
             return R0 + (1 - R0) * c * c * c * c * c;
         }
 
-        public static Vector3 IdealSpecularReflect(Vector3 d, Vector3 n) {
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static Vector3 IdealSpecularReflect(Vector3 d, Vector3 n) {
             return d - 2.0 * n.Dot(d) * n;
         }
 

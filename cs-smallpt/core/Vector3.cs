@@ -21,7 +21,8 @@ namespace cs_smallpt {
 		public Vector3(Vector3 v)
 			: this(v.x, v.y, v.z) {}
 
-        public bool HasNaNs() {
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool HasNaNs() {
             return double.IsNaN(this.x)
 				|| double.IsNaN(this.y)
 				|| double.IsNaN(this.z);

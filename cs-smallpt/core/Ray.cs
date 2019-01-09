@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace cs_smallpt {
 
     public class Ray {
@@ -16,7 +18,8 @@ namespace cs_smallpt {
             this.depth = depth;
         }
 
-        public Vector3 Eval(double t) {
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public Vector3 Eval(double t) {
             return o + d * t;
         }
 
