@@ -12,9 +12,17 @@ configuration:
  - Release
  - Debug
 
+environment:
+  matrix:
+  - solution_name: cs-smallpt/cs-smallpt.sln
+  #- solution_name: threads-cs-smallpt/cs-smallpt.sln
+
 ###############################################################################
 # Build Configuration
 ###############################################################################
 build:
   parallel: true
   verbosity: normal
+
+build_script:
+  - msbuild %solution_name%
