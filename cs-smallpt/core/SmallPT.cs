@@ -95,8 +95,7 @@ namespace cs_smallpt {
 			Vector3 F = new Vector3(1.0);
 
 			while (true) {
-				int id;
-				if (!Intersect(r, out id)) {
+				if (!Intersect(r, out int id)) {
 					return L;
 				}
 
@@ -124,8 +123,7 @@ namespace cs_smallpt {
 							break;
 						}
 					case Sphere.Reflection_t.REFRACTIVE: {
-							double pr;
-							Vector3 d = Specular.IdealSpecularTransmit(r.d, n, REFRACTIVE_INDEX_OUT, REFRACTIVE_INDEX_IN, out pr, rng);
+							Vector3 d = Specular.IdealSpecularTransmit(r.d, n, REFRACTIVE_INDEX_OUT, REFRACTIVE_INDEX_IN, out double pr, rng);
 							F *= pr;
 							r = new Ray(p, d, Sphere.EPSILON_SPHERE, double.PositiveInfinity, r.depth + 1);
 							break;
