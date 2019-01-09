@@ -25,7 +25,7 @@ namespace cs_smallpt {
         public bool Intersect(Ray ray) {
             // (o + t*d - p) . (o + t*d - p) - r*r = 0
             // <=> (d . d) * t^2 + 2 * d . (o - p) * t + (o - p) . (o - p) - r*r = 0
-            // 
+            //
             // Discriminant check
             // (2 * d . (o - p))^2 - 4 * (d . d) * ((o - p) . (o - p) - r*r) <? 0
             // <=> (d . (o - p))^2 - (d . d) * ((o - p) . (o - p) - r*r) <? 0
