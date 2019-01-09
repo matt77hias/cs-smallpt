@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace cs_smallpt {
 
@@ -132,11 +132,11 @@ namespace cs_smallpt {
 						}
 					default: {
 							Vector3 w = n.Dot(r.d) < 0 ? n : -n;
-							Vector3 u = ((Math.Abs(w[0]) > 0.1 ? new Vector3(0.0, 1.0, 0.0) : new Vector3(1.0, 0.0, 0.0)).Cross(w)).Normalize();
+							Vector3 u = ((Math.Abs(w.x) > 0.1 ? new Vector3(0.0, 1.0, 0.0) : new Vector3(1.0, 0.0, 0.0)).Cross(w)).Normalize();
 							Vector3 v = w.Cross(u);
 
 							Vector3 sample_d = Sampling.CosineWeightedSampleOnHemisphere(rng.UniformFloat(), rng.UniformFloat());
-							Vector3 d = (sample_d[0] * u + sample_d[1] * v + sample_d[2] * w).Normalize();
+							Vector3 d = (sample_d.x * u + sample_d.y * v + sample_d.z * w).Normalize();
 							r = new Ray(p, d, Sphere.EPSILON_SPHERE, double.PositiveInfinity, r.depth + 1);
 							break;
 						}

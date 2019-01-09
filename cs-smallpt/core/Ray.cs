@@ -1,4 +1,4 @@
-﻿namespace cs_smallpt {
+namespace cs_smallpt {
 
     public class Ray {
 
@@ -9,8 +9,8 @@
         public int depth { get; set; }
 
         public Ray(Vector3 o, Vector3 d, double tmin = 0.0, double tmax = double.PositiveInfinity, int depth = 0) {
-            this.o = o.Clone();
-            this.d = d.Clone();
+            this.o = o;
+            this.d = d;
             this.tmin = tmin;
             this.tmax = tmax;
             this.depth = depth;

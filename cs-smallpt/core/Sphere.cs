@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace cs_smallpt {
 
@@ -16,9 +16,9 @@ namespace cs_smallpt {
 
         public Sphere(double r, Vector3 p, Vector3 e, Vector3 f, Reflection_t reflection_t) {
             this.r = r;
-            this.p = p.Clone();
-            this.e = e.Clone();
-            this.f = f.Clone();
+            this.p = p;
+            this.e = e;
+            this.f = f;
             this.reflection_t = reflection_t;
         }
 

@@ -12,9 +12,9 @@ namespace cs_smallpt {
 
                 for (int i = 0; i < w * h; ++i) {
                     string s = string.Format("{0} {1} {2} ", 
-						                     MathUtils.ToByte(Ls[i][0]), 
-						                     MathUtils.ToByte(Ls[i][1]), 
-						                     MathUtils.ToByte(Ls[i][2]));
+						                     MathUtils.ToByte(Ls[i].x), 
+						                     MathUtils.ToByte(Ls[i].y), 
+						                     MathUtils.ToByte(Ls[i].z));
                     sw.Write(s);
                 }
             }
