@@ -7,9 +7,9 @@
     <ProjectGuid>{363105CA-A1E4-45EA-8FE0-45DE87FE29A9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>cs_smallpt</RootNamespace>
+    <RootNamespace>smallpt</RootNamespace>
     <AssemblyName>cs-smallpt</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
